@@ -1,0 +1,61 @@
+
+#main_daily {
+	background-color: #fff;
+	overflow: hidden;
+	width: 800px;
+	margin: 0 auto;
+}
+.article {
+	width: 800px;
+	height: 280px;
+	margin: 0 auto;
+}
+#main_daily li {
+	margin-top: 40px;
+	list-style-type: none;
+}
+a {
+	text-decoration: none;
+	color: #4c4c4c;
+	font-size: 20px;
+}
+.post-image {
+	float: left;
+	display: inline-block;
+}
+.content {
+	padding: 0;
+	margin: 0;
+	width: 370px;
+	height: 240px;
+	float: right;
+	border: none;
+	word-break:break-all;
+	display: -webkit-box;
+	text-overflow: ellipsis;
+	overflow : hidden;
+	-webkit-line-clamp: 9;
+	-webkit-box-orient: vertical;
+}
+.post-content {
+	width: 370px;
+	overflow : hidden;
+	text-overflow: ellipsis;
+	margin: 0;
+	padding: 0;
+	float: left;
+	margin-top: -28px;
+}
+.bottom {
+	width: 1320px;
+	height: 10px;
+	float: left;
+	margin: 0 auto;
+	margin-top: 10px;
+	background:url('../image/cut_off.png');
+}
+#d {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+}

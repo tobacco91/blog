@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url().'style/admin/' ?>css/article_publish.css">
+	</head>
+	<body>
+	<?php $this->load->view('admin/index.html'); ?>
+		<div class="location">
+			
+		
+			<form action="<?php echo site_url('admin/article/send') ?>" method="POST" enctype="multipart/form-data">
+					<div class="hide">
+						<p class="bt"> 标题：</p><input type="text" name="title" id="biaoti" value="<?php echo set_value('title') ?>"/>
+						<?php echo form_error('title', '<span>', '</span>') ?>
+						<br>	
+						<p class="bt"> 类型：</p>
+							<select id="leixing" name="type">
+								<option value="life"   <?php echo  set_select('type', 'life', TRUE); ?> >生活</option>
+								<option value="study"  <?php echo set_select('type','study'); ?>>学习</option>
+								<option value="work"  <?php echo set_select('type','work'); ?>>工作</option>
+								<option value="emotion"   <?php echo set_select('type','emotion') ?>>情感</option>
+								<option value="others"   <?php echo set_select('type','others'); ?>>其他</option>
+							</select><br>
+						<p class="bt"> 文件上传：</p>
+							<input type="file" name="thumb" id="wenjian" onchange="preImg(this.id,'imgPre');" />
+							<img id="imgPre" src="" width="100px" height="100px" style="display:inline-block;" /> <br>
+						<p id="nr"> 内容：</p>
+							<textarea type="text" name="content" id="neirong"><?php echo set_value('content') ?></textarea>
+							<?php echo form_error('content', '<span>', '</span>') ?>
+							<br>
+						<button id="publish">发表</button>
+					</div>
+			</form>
+		</div>
+
+
+
+
+
+		<script type="text/javascript"> 
+			/** * 从 file 域获取 本地图片 url */ 
+			function getFileUrl(sourceId) { 
+				var url; 
+				if (navigator.userAgent.indexOf("MSIE")>=1) { // IE 
+					url = document.getElementById(sourceId).value; 
+				} 
+				else if(navigator.userAgent.indexOf("Firefox")>0) { // Firefox 
+					url = window.URL.createObjectURL(document.getElementById(sourceId).files.item(0)); 
+				} 
+				else if(navigator.userAgent.indexOf("Chrome")>0) { // Chrome 
+					url = window.URL.createObjectURL(document.getElementById(sourceId).files.item(0)); 
+				} 
+				return url; 
+			} 
+
+			/** * 将本地图片 显示到浏览器上 */ 
+			function preImg(sourceId, targetId) { 
+				var url = getFileUrl(sourceId); 
+				var imgPre = document.getElementById(targetId); 
+				imgPre.src = url; 
+			} 
+		</script> 
+
+		<script type="text/javascript" charset="utf-8" src="../kindeditor-4.1.10/kindeditor.js"></script>
+		<script type="text/javascript" charset="utf-8" src="../kindeditor-4.1.10/lang/zh_CN.js.js"></script>
+		
+
+		<script>
+
+   			var editor;
+   			KindEditor.ready(function(K) {
+   				editor = K.create('#neirong');
+
+   			});
+
+		</script>
+	</body>
+</html>
