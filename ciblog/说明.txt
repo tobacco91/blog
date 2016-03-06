@@ -1,0 +1,5 @@
+前端界面入口
+http://localhost/ciblog/index.php/index/home/index
+
+后台管理界面入口
+http://localhost/ciblog/index.php/admin/admin/index
