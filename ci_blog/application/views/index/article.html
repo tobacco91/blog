@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<link href="<?php echo base_url() . 'style/index/' ?>css/details.css" rel="stylesheet" />
+<head/>
+<body>
+ 
+	<div id="main">
+		<div class='details'>
+			<h1><?php echo $article[0]['title'] ?></h1>
+			<div class='info'>
+				<div class='base'>
+					<em>发表于 <?php echo date('H:i:s',$article[0]['time']) ?></em>, 分类：<strong><?php echo $article[0]['type'] ?></strong>
+				</div>
+			</div>
+			<div class='cont'>
+				<div class="tp"><img  width="" src="<?php echo base_url() . 'uploads/'. $article[0]['thumb']?>" /></div>
+				<?php echo $article[0]['content'] ?>
+				<!-- <form action="<?php echo site_url('index/home/add_comment') ?>" method="POST">
+				<input type="hidden" name="aid" value="<?php echo $article[0]['aid'] ?>"/> -->
+				
+			</div>
+			<!-- <div> -->
+				<!-- <?php echo $message[0]['comment'] ?>
+				<input type="text" name="comment"/>
+				<input type="submit"></form>
+			</div> -->
+		<!-- </div> -->
+
+
+
+		<div id="btt">
+			<p id="d">design by：曾玉   陈馨怡</p>
+		</div>
+	</div>
+
+	
+
+</body>
+</html>
