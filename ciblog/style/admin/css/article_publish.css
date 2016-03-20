@@ -1,0 +1,46 @@
+body {
+	font-family: "Microsoft Yahei";
+}
+.location {
+	width: 1020px;
+	position:absolute;
+	top: 280px;
+	left: 315px;
+}
+.hide {
+	width: 1020px;
+	height: 500px;
+}
+.bt {
+	display: inline-block;
+	margin-left: 20px;
+	margin-bottom: 20px;
+	font-size: 18px;
+}
+#biaoti {
+	margin-left: 38px;
+}
+#leixing {
+	margin-left: 33px;
+}
+#nr {
+	margin-left: 20px;
+	margin-bottom: 20px;
+	font-size: 18px;
+	vertical-align: middle;
+
+}
+#neirong {
+	margin-left: 110px;
+	margin-top: -37px;
+	width: 800px;
+	height: 300px;
+}
+#publish {
+	width: 60px;
+	height: 30px;
+	float: right;
+	margin-top: 20px;
+	margin-right: 105px;
+	cursor: pointer;
+}

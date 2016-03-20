@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'style/admin/' ?>css/data_change.css">
+</head>
+<body>
+<?php $this->load->view('admin/index.html'); ?>
+<div class="location">
+	<form action="<?php echo site_url('admin/data/change') ?>" method="POST" enctype="multipart/form-data">
+	<div class="data">
+		<div class="photo">
+			<img id="imgPre" src="" border="0" style="display:inline-block;" /> 
+		</div>
+		<div class="information">
+			<p>更改头像：</p><input type="file" name="tx" id="wenjian" onchange="preImg(this.id,'imgPre');" /><br>
+			<p id="name">昵称:</p><input type="text" id="nc" name="nc" value="<?php echo $datas[0]['nc'] ?>" ><br>
+			<p id="sex">性别:</p>
+				<select id="xb" name='xb' value="<?php echo $datas[0]['xb'] ?>">
+					<option value="boy" <?php echo  set_select('xb', 'boy', TRUE); ?>>男</option>
+					<option value="girl" <?php echo  set_select('xb', 'girl'); ?>>女</option>
+				</select><br>
+			<p id="age">年龄:</p><input type="text" id="nl" name="nl" value="<?php echo $datas[0]['nl'] ?>" ><br>
+			<p id="hometown">故乡:</p><input type="text" id="gx" name="gx" value="<?php echo $datas[0]['gx'] ?>" ><br>
+			<p id="e-mail">邮箱:</p><input type="text" id="yx" name="yx" value="<?php echo $datas[0]['yx'] ?>" ><br>
+			<p id="qinming">个性签名:</p><textarea type="text" id="gxqm" name="gxqm"></textarea>
+			<br>
+			<input type="hidden" name="did" value="<?php echo $datas[0]['did'] ?>"/>
+			<input type="submit" value="提交" id="tj">
+		</div>
+	</div>
+	</form>
+</div>
+
+
+
+		<script type="text/javascript">
+		var str = "<?php echo $datas[0]['gxqm'] ?>";
+			document.querySelector("#gxqm").innerHTML = str;
+
+
+			/** * 从 file 域获取 本地图片 url */ 
+			function getFileUrl(sourceId) { 
+				var url; 
+				if (navigator.userAgent.indexOf("MSIE")>=1) { // IE 
+					url = document.getElementById(sourceId).value; 
+				} 
+				else if(navigator.userAgent.indexOf("Firefox")>0) { // Firefox 
+					url = window.URL.createObjectURL(document.getElementById(sourceId).files.item(0)); 
+				} 
+				else if(navigator.userAgent.indexOf("Chrome")>0) { // Chrome 
+					url = window.URL.createObjectURL(document.getElementById(sourceId).files.item(0)); 
+				} 
+				return url; 
+			} 
+
+			/** * 将本地图片 显示到浏览器上 */ 
+			function preImg(sourceId, targetId) { 
+				var url = getFileUrl(sourceId); 
+				var imgPre = document.getElementById(targetId); 
+				imgPre.src = url; 
+			} 
+	</script>
+
+
+	
+	<script type="text/javascript">
+		var str = "<?php echo $datas[0]['gxqm'] ?>";
+			document.querySelector("#gxqm").innerHTML = str;
+	</script>
+</body>
+</html>

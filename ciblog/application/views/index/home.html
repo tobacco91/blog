@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的博客</title>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'style/index/' ?>css/home.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'style/index/' ?>css/main.css">
+</head>
+<body>
+	<div class="container">
+		<div class="head">
+			<div class="middle">
+				<p>记录▪回忆</p>
+				<div id="flower">
+					<div id="sun_flower"></div>
+				</div>
+			</div>
+			<div class="chunlv">
+				<div id="list">
+					<ul>
+						<li>
+							<a href="<?php echo site_url('index/home/index') ?>">首页</a>
+						</li>
+						<li>
+							<a href="<?php echo site_url('index/home/check_article') ?>">日志</a>
+						</li>
+						<li>
+							<a href="<?php echo site_url('index/home/display') ?>">个人资料</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+<div class="color">
+		<ul id="main_daily">
+			
+			
+			<?php foreach($article as $v): ?>
+				<li >
+					<div class="article">
+
+						<div class='post-image'>
+							<span>
+								<a href="<?php echo site_url('index/home/article/' . $v['aid']) ?>"><img width="" src="<?php echo base_url() . 'uploads/'. $v['thumb']?>" /></a>
+							</span>	
+						</div>
+
+						<div class="content">
+							<div class='post-content'>
+								<a href="<?php echo site_url('index/home/article/' . $v['aid']) ?>"><h3><?php echo $v['title'] ?></h3></a>
+							</div>
+
+							<?php echo $v['content'] ?>
+
+						</div>
+					</div>
+				</li>
+
+			<?php endforeach ?>
+			
+		</ul>
+</div>
+
+		<div class="bottom">
+			<p id="d">design by：曾玉   陈馨怡</p>
+		</div>
+	</div>
+
+
+	
+		
+	
+	
+
+
+</body>
+</html>

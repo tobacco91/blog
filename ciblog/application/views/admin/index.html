@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>管理中心</title>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'style/admin/' ?>css/home.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'style/admin/' ?>css/manage.css">
+
+</head>
+<body>
+	<div class="container">
+		<div class="head">
+			<div class="middle">
+				<p>记录▪回忆</p>
+				<div id="flower">
+					<div id="sun_flower"></div>
+				</div>
+			</div>
+		</div>
+		<div class="manage">
+			<div class="left">
+				<div class="top">
+					<p>功能管理</p>
+				</div>
+				<div class="manage_list">
+					<p class="act">
+						<span>
+							<i class="iconfont">&#xe600;</i>
+						</span>
+						<a href="<?php echo site_url('admin/article/index') ?>">日志管理</a>
+						
+					</p>
+					<p>
+						<span>
+							<i class="iconfont">&#xe600;</i>
+						</span>
+						<a href="<?php echo site_url('admin/article/send_article') ?>">发表日志</a>
+						
+					</p>
+					<p>
+						<span>
+							<i class="iconfont">&#xe600;</i>
+						</span>
+						<a href="<?php echo site_url('admin/data/index') ?>">修改个人资料</a>
+						
+					</p>
+					<p>
+						<span>
+							<i class="iconfont">&#xe600;</i>
+						</span>
+						<a href="<?php echo site_url('admin/admin/change') ?>">修改密码</a>
+						
+					</p>
+					<p>
+						<span>
+							<i class="iconfont">&#xe600;</i>
+						</span>
+						<a href="<?php echo site_url('admin/login/index') ?>">退出</a>
+						
+					</p>
+				</div>
+			</div>
+			<div class="right">
+			</div>
+		</div>
+	</div>
+	<div class="bottom">
+			<p id="d">design by：</p>
+	</div>
+
+</body>
+</html>
